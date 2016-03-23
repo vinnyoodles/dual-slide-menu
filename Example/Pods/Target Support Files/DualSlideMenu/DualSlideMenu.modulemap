@@ -1,0 +1,6 @@
+framework module DualSlideMenu {
+  umbrella header "DualSlideMenu-umbrella.h"
+
+  export *
+  module * { export * }
+}

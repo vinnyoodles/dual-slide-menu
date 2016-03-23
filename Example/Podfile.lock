@@ -1,0 +1,20 @@
+PODS:
+  - DualSlideMenu (0.1.0)
+  - Nimble (3.2.0)
+  - Quick (0.9.1)
+
+DEPENDENCIES:
+  - DualSlideMenu (from `../`)
+  - Nimble (~> 3.0)
+  - Quick (~> 0.8)
+
+EXTERNAL SOURCES:
+  DualSlideMenu:
+    :path: ../
+
+SPEC CHECKSUMS:
+  DualSlideMenu: 2906431f5aa221042939d9a2c840049749e5ff9a
+  Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
+  Quick: a5221fc21788b6aeda934805e68b061839bc3165
+
+COCOAPODS: 0.39.0

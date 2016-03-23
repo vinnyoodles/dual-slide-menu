@@ -1,0 +1,25 @@
+{
+  "name": "DualSlideMenu",
+  "version": "0.1.0",
+  "summary": "A short description of DualSlideMenu.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/DualSlideMenu",
+  "license": "MIT",
+  "authors": {
+    "Vincent Le": "vinnyoodles@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/DualSlideMenu.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "DualSlideMenu": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}
