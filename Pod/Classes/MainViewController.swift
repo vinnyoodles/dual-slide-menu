@@ -1,0 +1,42 @@
+//
+//  MainViewController.swift
+//  Pods
+//
+//  Created by Vincent Le on 3/23/16.
+//
+//
+
+import UIKit
+
+protocol MainViewControllerDelegate {
+    func toggle(swipeDirection: String)
+    func closeBothMenu()
+}
+class MainViewController: UIViewController {
+    
+    //The connection between main vc and the container vc
+    var delegate: MainViewControllerDelegate?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}

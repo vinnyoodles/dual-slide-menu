@@ -36,7 +36,6 @@
 		4E5A721963877AA3A6AA3D80DAA4E5E9 /* AssertionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDAA753452F6B96DE24D2CF7D396628 /* AssertionRecorder.swift */; };
 		5104AE2989305145BF446E633B567924 /* EndWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE5DB72110FF4FE8D16C90A617EFD92 /* EndWith.swift */; };
 		53CE2F20C234FF88DE342801A0566073 /* QuickSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = A1177F46842A02EE1A9A945434E453FF /* QuickSpec.m */; };
-		5901F9C11F514B9846B65E616413CFDD /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5429CD4340EEAC6C8444B898BE584114 /* ReplaceMe.swift */; };
 		5EF5C00C6AECE1FCFFF118577817F5CE /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3661DD977D936FA0FEA7FDE08D852 /* Equal.swift */; };
 		63BBD83995BA60FA7D2E6AD4138C0D71 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354B5315AD30C24D1172D4F1524B068D /* Functional.swift */; };
 		64539BE196D1741570018FFF86F14133 /* MatcherFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971FBD63640E42D5B13E199D80A38E44 /* MatcherFunc.swift */; };
@@ -80,6 +79,9 @@
 		B97E9B4B8DCEF8EB8CC47CF6B319542D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E351727CD07BB90B2A3CAE2C2433F6C5 /* Foundation.framework */; };
 		B9D2E426B5CA226D60A78A71FA289D4C /* AsyncMatcherWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9341EE27FCA41AD8B88193EC0C839859 /* AsyncMatcherWrapper.swift */; };
 		BBA5097E9A21379F23A554950EE22E71 /* XCTestSuite+QuickTestSuiteBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = C5DDC9824ED21BCC218F3C3E3E907AED /* XCTestSuite+QuickTestSuiteBuilder.m */; };
+		BF3CA50F1CA360C10033E621 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3CA50E1CA360C10033E621 /* ContainerViewController.swift */; };
+		BF3CA5111CA360CB0033E621 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3CA5101CA360CB0033E621 /* MainViewController.swift */; };
+		BF3CA5131CA360D20033E621 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3CA5121CA360D20033E621 /* SideMenuViewController.swift */; };
 		C12E0930E021F1894B60BC6AFA8F2409 /* AdapterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ADCB0AE00199FEACED77BDE119552F /* AdapterProtocols.swift */; };
 		C3DA2AA6B789B3B6CD2FF36F15AB9A9C /* DualSlideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3757F209EAA0AC8251DA60D9E0D0111E /* DualSlideMenu-dummy.m */; };
 		C4A8C1F9461043584A7395A70F468B3C /* NSBundle+CurrentTestBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B16739831A57E59BFE39E8BF50128C /* NSBundle+CurrentTestBundle.swift */; };
@@ -187,7 +189,6 @@
 		4EBC862576E582DF711B25DC28CFCDBE /* QuickTestSuite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuickTestSuite.swift; path = Sources/Quick/QuickTestSuite.swift; sourceTree = "<group>"; };
 		4F848B51F017CAF77ACE058DE62A23ED /* Pods-DualSlideMenu_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DualSlideMenu_Example.release.xcconfig"; sourceTree = "<group>"; };
 		51465DCF8ECE9AE4DD3DECD5656849CE /* Expectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expectation.swift; path = Sources/Nimble/Expectation.swift; sourceTree = "<group>"; };
-		5429CD4340EEAC6C8444B898BE584114 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		5BD8B42423A8E600C935BB353CFD5341 /* Pods-DualSlideMenu_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DualSlideMenu_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5C8C873CB5F43A0FA130C9B9FF74B6B0 /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAnyOf.swift; path = Sources/Nimble/Matchers/SatisfyAnyOf.swift; sourceTree = "<group>"; };
 		5CE93FA4667205AEE386C8648ABDC57E /* BeCloseTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeCloseTo.swift; path = Sources/Nimble/Matchers/BeCloseTo.swift; sourceTree = "<group>"; };
@@ -241,6 +242,9 @@
 		BBACEB31F87FDB2A294186DEFA980590 /* ExampleGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleGroup.swift; path = Sources/Quick/ExampleGroup.swift; sourceTree = "<group>"; };
 		BE582507271FE02BA93C412C422D4ED8 /* Nimble.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Nimble.h; path = Sources/Nimble/Nimble.h; sourceTree = "<group>"; };
 		BEDAA753452F6B96DE24D2CF7D396628 /* AssertionRecorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionRecorder.swift; path = Sources/Nimble/Adapters/AssertionRecorder.swift; sourceTree = "<group>"; };
+		BF3CA50E1CA360C10033E621 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		BF3CA5101CA360CB0033E621 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BF3CA5121CA360D20033E621 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		C34071C41916A37E669FEEBA855F42C2 /* BeAnInstanceOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAnInstanceOf.swift; path = Sources/Nimble/Matchers/BeAnInstanceOf.swift; sourceTree = "<group>"; };
 		C3DF3DF96666A86723EFC230D8F3FC83 /* DualSlideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DualSlideMenu.xcconfig; sourceTree = "<group>"; };
 		C54DED8B98FC70758056C48DF3A637D1 /* Pods-DualSlideMenu_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DualSlideMenu_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -356,7 +360,9 @@
 		08BB863CC4DF8CC496B389B1E902D1FA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				5429CD4340EEAC6C8444B898BE584114 /* ReplaceMe.swift */,
+				BF3CA50E1CA360C10033E621 /* ContainerViewController.swift */,
+				BF3CA5101CA360CB0033E621 /* MainViewController.swift */,
+				BF3CA5121CA360D20033E621 /* SideMenuViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -763,7 +769,7 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
@@ -872,8 +878,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF3CA5131CA360D20033E621 /* SideMenuViewController.swift in Sources */,
+				BF3CA5111CA360CB0033E621 /* MainViewController.swift in Sources */,
+				BF3CA50F1CA360C10033E621 /* ContainerViewController.swift in Sources */,
 				C3DA2AA6B789B3B6CD2FF36F15AB9A9C /* DualSlideMenu-dummy.m in Sources */,
-				5901F9C11F514B9846B65E616413CFDD /* ReplaceMe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -964,6 +972,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C3DF3DF96666A86723EFC230D8F3FC83 /* DualSlideMenu.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1091,6 +1100,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C3DF3DF96666A86723EFC230D8F3FC83 /* DualSlideMenu.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

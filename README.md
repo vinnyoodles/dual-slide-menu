@@ -1,6 +1,6 @@
 # DualSlideMenu
 
-[![CI Status](http://img.shields.io/travis/Vincent Le/DualSlideMenu.svg?style=flat)](https://travis-ci.org/Vincent Le/DualSlideMenu)
+[![Build Status](https://travis-ci.org/vinnyoodles/DualSlideMenu.svg?branch=master)](https://travis-ci.org/vinnyoodles/DualSlideMenu)
 [![Version](https://img.shields.io/cocoapods/v/DualSlideMenu.svg?style=flat)](http://cocoapods.org/pods/DualSlideMenu)
 [![License](https://img.shields.io/cocoapods/l/DualSlideMenu.svg?style=flat)](http://cocoapods.org/pods/DualSlideMenu)
 [![Platform](https://img.shields.io/cocoapods/p/DualSlideMenu.svg?style=flat)](http://cocoapods.org/pods/DualSlideMenu)
