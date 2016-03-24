@@ -8,8 +8,14 @@
 
 import UIKit
 
+enum Side{
+    case Left
+    case Right
+}
 class SideMenuViewController: UIViewController {
-
+    //initialize variables
+    var type: Side = .Left//default is left, does not make a difference
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
