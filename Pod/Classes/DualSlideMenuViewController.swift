@@ -30,8 +30,6 @@ class DualSlideMenuViewController: UIViewController, MainViewControllerDelegate 
         //First, instantiate the view controllers that will appear first
         mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         mainView = mainStoryboard.instantiateViewControllerWithIdentifier("MainViewController") as! MainViewController
-//        rightMenu = mainStoryboard.instantiateViewControllerWithIdentifier("RightMenuController") as! SideMenuViewController
-//        leftMenu = mainStoryboard.instantiateViewControllerWithIdentifier("LeftMenuController") as! SideMenuViewController
         
         //Set this class as the delegate to the main view to later call the toggle menu method
         mainView.delegate = self
