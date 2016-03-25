@@ -3,6 +3,7 @@
 # * https://github.com/supermarin/xcpretty#usage
 
 language: swift
+rvm: 2.2.2
 # cache: cocoapods
 #podfile: Example/Podfile
 before_install:
