@@ -1,15 +1,14 @@
 {
   "name": "DualSlideMenu",
   "version": "0.1.0",
-  "summary": "A short description of DualSlideMenu.",
-  "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/DualSlideMenu",
+  "summary": "Swipe to the left or right for a table view",
+  "homepage": "https://github.com/vinnyoodles/DualSlideMenu",
   "license": "MIT",
   "authors": {
     "Vincent Le": "vinnyoodles@gmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/DualSlideMenu.git",
+    "git": "https://github.com/vinnyoodles/DualSlideMenu.git",
     "tag": "0.1.0"
   },
   "platforms": {
