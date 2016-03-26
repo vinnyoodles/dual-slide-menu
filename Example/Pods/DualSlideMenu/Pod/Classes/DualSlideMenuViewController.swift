@@ -14,7 +14,7 @@ enum State {
     case Main
 }
 
-class DualSlideMenuViewController: UIViewController, MainViewControllerDelegate {
+public class DualSlideMenuViewController: UIViewController, MainViewControllerDelegate {
     
     //Create variables that will be used 
     var mainStoryboard: UIStoryboard!
@@ -29,9 +29,7 @@ class DualSlideMenuViewController: UIViewController, MainViewControllerDelegate 
         super.viewDidLoad()
         //First, instantiate the view controllers that will appear first
         mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        mainView = mainStoryboard.instantiateViewControllerWithIdentifier("MainViewController") as! MainViewController
-//        rightMenu = mainStoryboard.instantiateViewControllerWithIdentifier("RightMenuController") as! SideMenuViewController
-//        leftMenu = mainStoryboard.instantiateViewControllerWithIdentifier("LeftMenuController") as! SideMenuViewController
+        mainView = mainStoryboard.instantiateViewControllerWithIdentifier("MainViewController") as? MainViewController
         
         //Set this class as the delegate to the main view to later call the toggle menu method
         mainView.delegate = self

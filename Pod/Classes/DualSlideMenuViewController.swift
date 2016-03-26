@@ -8,40 +8,64 @@
 
 import UIKit
 
-enum State {
+public enum State {
     case Left
     case Right
     case Main
 }
 
-class DualSlideMenuViewController: UIViewController, MainViewControllerDelegate {
+public class DualSlideMenuViewController: UIViewController {
     
     //Create variables that will be used 
-    var mainStoryboard: UIStoryboard!
-    var mainView: MainViewController!
-    var navigation: UINavigationController!
-    var rightMenu: SideMenuViewController?
-    var leftMenu: SideMenuViewController?
-    var currentState: State = .Main
-    var sideViewOffset: CGFloat = 50
-
-    override func viewDidLoad() {
+    public var mainView: UIViewController!
+    public var navigation: UINavigationController!
+    public var currentState: State = .Main
+    public var mainStoryboard: UIStoryboard!
+    public var rightMenu: UIViewController!
+    public var leftMenu: UIViewController!
+    public var sideViewOffset: CGFloat = 150
+    
+    public convenience init(mainViewController: UIViewController, leftMenuViewController: UIViewController, rightMenuViewController: UIViewController) {
+        self.init()
+        mainView = mainViewController
+        leftMenu = leftMenuViewController
+        rightMenu = rightMenuViewController
+        
+        addSwipeGestures(mainView)
+        view.insertSubview(mainView.view, atIndex: 0)
+        view.insertSubview(rightMenu.view, belowSubview: mainView.view)
+        view.insertSubview(leftMenu.view, belowSubview: rightMenu.view)
+    }
+    override public func viewDidLoad() {
         super.viewDidLoad()
-        //First, instantiate the view controllers that will appear first
-        mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        mainView = mainStoryboard.instantiateViewControllerWithIdentifier("MainViewController") as? MainViewController
+    }
+    /**
+     called on initialization
+     adds left and right swipe recognizers
+     
+     - parameter mainView: the view that will contain the gestures
+     */
+    func addSwipeGestures(mainView: UIViewController) {
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        leftSwipe.direction = .Left
+        rightSwipe.direction = .Right
         
-        //Set this class as the delegate to the main view to later call the toggle menu method
-        mainView.delegate = self
-        
-        //The main view needs to be in a navigation controller because the menu view controllers are
-        //being segued through a push segue and also utilize the navigation bar
-        navigation = UINavigationController(rootViewController: mainView)
-        self.view.addSubview(navigation.view)
-        
-        //Set parent-child relationships between container and navigation controllers
-        addChildViewController(navigation)
-        navigation.didMoveToParentViewController(self)
+        mainView.view.addGestureRecognizer(leftSwipe)
+        mainView.view.addGestureRecognizer(rightSwipe)
+    }
+    /**
+     called when the user makes a swipe
+     
+     - parameter sender: the sender
+     */
+    func handleSwipes(sender:UISwipeGestureRecognizer) {
+        if (sender.direction == .Left) {
+            toggle("left")
+        }
+        else if (sender.direction == .Right){
+            toggle("right")
+        }
     }
     
     /**
@@ -52,6 +76,18 @@ class DualSlideMenuViewController: UIViewController, MainViewControllerDelegate 
      */
     func toggle(swipeDirection: String) {
         switch currentState{
+        case .Main :
+            //Swipe left to open right panel
+            if (swipeDirection == "left") {
+                moveToView(true, type: .Right)
+                swapPanels(.Right)
+            }
+            //Swipe right to open left panel
+            else if (swipeDirection == "right") {
+                moveToView(true, type: .Left)
+                swapPanels(.Left)
+            }
+            break
         case .Left :
             //Swipe left to close left panel
             if (swipeDirection == "left") {
@@ -64,37 +100,24 @@ class DualSlideMenuViewController: UIViewController, MainViewControllerDelegate 
                 moveToView(false, type: .Right)
             }
             break
-        case .Main :
-            //Swipe left to open right panel
-            if (swipeDirection == "left") {
-                addSideMenuViewController(.Right)
-                moveToView(true, type: .Right)
-            }
-            //Swipe right to open left panel
-            else if (swipeDirection == "right") {
-                addSideMenuViewController(.Left)
-                moveToView(true, type: .Left)
-            }
-            break
         }
     }
     /**
-     Close whichever side menu that is open
-     Does nothing if on the main view
+     Swap side panels positions
+        example places right panel behind left panel
+     
+     - parameter type: the panel that will be on top
      */
-    func closeBothMenu() {
-    }
-    
-    func addSideMenuViewController(type: State) {
-        if (type == .Right && rightMenu == nil) {
-            rightMenu = mainStoryboard.instantiateViewControllerWithIdentifier("RightMenuController") as? SideMenuViewController
-            rightMenu!.type = .Right
-            addChildViewController(rightMenu!)
+    func swapPanels(type: State) {
+        if (type == .Right){
+            leftMenu.view.removeFromSuperview()
+            view.insertSubview(leftMenu.view, belowSubview: rightMenu.view)
+            
         }
-        else if (type == .Left && leftMenu == nil) {
-            leftMenu = mainStoryboard.instantiateViewControllerWithIdentifier("LeftMenuController") as? SideMenuViewController
-            leftMenu!.type = .Left
-            addChildViewController(leftMenu!)
+        else if (type == .Left) {
+            rightMenu.view.removeFromSuperview()
+            view.insertSubview(rightMenu.view, belowSubview: leftMenu.view)
+ 
         }
     }
     
@@ -107,24 +130,19 @@ class DualSlideMenuViewController: UIViewController, MainViewControllerDelegate 
     func moveToView(open: Bool, type: State){
         if (open) {
             currentState = type
+            var displacement: CGFloat = 0
             //Calculate the amount of distance the main view needs to move
-            //Use ternary operator to find direction
-            let mainViewDisplacement = type == .Left ?
-                CGRectGetWidth(navigation.view.frame) - sideViewOffset :
-                -CGRectGetWidth(navigation.view.frame) + sideViewOffset
-            moveMainViewBy(mainViewDisplacement)
+            if (type == .Left) {
+                displacement = CGRectGetWidth(mainView.view.frame) - sideViewOffset
+            }
+            else if (type == .Right) {
+                displacement = sideViewOffset - CGRectGetWidth(mainView.view.frame)
+            }
+            moveMainViewBy(displacement)
         }
         else {
             //Move back to main view
             moveMainViewBy(0) { completion in
-                if (type == .Left) {
-                    self.leftMenu!.view.removeFromSuperview()
-                    self.leftMenu = nil
-                }
-                else if (type == .Right) {
-                    self.rightMenu!.view.removeFromSuperview()
-                    self.rightMenu = nil
-                }
                 self.currentState = .Main
             }
             
@@ -140,7 +158,7 @@ class DualSlideMenuViewController: UIViewController, MainViewControllerDelegate 
     func moveMainViewBy(xDisplacement: CGFloat, completion: ((Bool) -> Void)! = nil) {
         //Animate with a spring damping coefficient of 0.8
         UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .CurveEaseInOut, animations: {
-            self.navigation.view.frame.origin.x = xDisplacement
-            }, completion: completion)
+            self.mainView.view.frame.origin.x = xDisplacement
+        }, completion: completion)
     }
 }

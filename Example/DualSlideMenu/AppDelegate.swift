@@ -13,12 +13,22 @@ import DualSlideMenu
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var storyboard: UIStoryboard?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        storyboard = UIStoryboard(name: "Main", bundle: nil)
+
         
-//        let controller = DualSlideMenuViewController()
-//        self.presentViewController(controller, animated: true, completion: nil)
+        let leftView = storyboard?.instantiateViewControllerWithIdentifier("LeftMenuController")
+        let rightView = storyboard?.instantiateViewControllerWithIdentifier("RightMenuController")
+        let mainView = storyboard?.instantiateViewControllerWithIdentifier("MainController")
+        
+        let controller = ExampleViewController(mainViewController: mainView!, leftMenuViewController: leftView!, rightMenuViewController: rightView!)
+        controller.sideViewOffset = 200
+        window!.rootViewController = controller
+        window!.makeKeyAndVisible()
         return true
     }
 

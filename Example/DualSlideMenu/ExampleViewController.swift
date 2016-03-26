@@ -1,21 +1,16 @@
 //
-//  SideMenuViewController.swift
-//  Pods
+//  ExampleViewController.swift
+//  DualSlideMenu
 //
-//  Created by Vincent Le on 3/23/16.
-//
+//  Created by Vincent Le on 3/25/16.
+//  Copyright © 2016 CocoaPods. All rights reserved.
 //
 
 import UIKit
+import DualSlideMenu
 
-enum Side{
-    case Left
-    case Right
-}
-class SideMenuViewController: UIViewController {
-    //initialize variables
-    var type: Side = .Left//default is left, does not make a difference
-    
+class ExampleViewController: DualSlideMenuViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
