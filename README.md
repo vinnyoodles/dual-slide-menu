@@ -7,7 +7,7 @@
 
 Left and right slide menu to keep your main view clutter free
 
-<img src='demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='images/demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Usage
 
@@ -26,7 +26,7 @@ pod "DualSlideMenu"
 
 Create a main view controller, which can be considered the home view of the app, and two other view controllers which will be the left and the right side menus. Then add an identifier for the three view controllers which will be used in the AppDelegate.
 
-![identifier](identifier.png)
+![identifier](images/identifier.png)
 
 In your AppDelegate file, add the pod to the file 
 ```swift
