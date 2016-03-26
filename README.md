@@ -6,6 +6,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/DualSlideMenu.svg?style=flat)](http://cocoapods.org/pods/DualSlideMenu)
 
 Left and right slide menu to keep your main view clutter free
+
 <img src='demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Usage
