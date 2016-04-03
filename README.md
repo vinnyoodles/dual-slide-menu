@@ -64,6 +64,12 @@ controller.sideViewOffset = 200
 //200 represents the width of the main view when the side menu is present
 ```
 
+If you decide to add other actions to open the menu such as a hamburger button, then just call the toggle method of DualSlideMenuViewController with the parameter of which direction the main view should move. I know its counterintuitive, but think of the parameter not as where the side view appears but where the main view is moving towards
+```swift
+controller.toggle('right')
+//This will open the left side view and move the main view to the RIGHT (KEYWORD)
+```
+
 
 ## Author
 
