@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var storyboard: UIStoryboard?
-
+    var controller: DualSlideMenuViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -23,13 +23,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let leftView = storyboard?.instantiateViewControllerWithIdentifier("LeftMenuController")
         let rightView = storyboard?.instantiateViewControllerWithIdentifier("RightMenuController")
-        let mainView = storyboard?.instantiateViewControllerWithIdentifier("MainController")
+        let mainView = storyboard?.instantiateViewControllerWithIdentifier("MainController") as! ExampleViewController
         
-        let controller = ExampleViewController(mainViewController: mainView!, leftMenuViewController: leftView!, rightMenuViewController: rightView!)
-        controller.sideViewOffset = 200
+        let navigationBar = UINavigationBar(frame: CGRectMake(0, 20, mainView.view.frame.size.width, 44))
+        let navigationItem = UINavigationItem()
+        let menuButton = UIBarButtonItem(image: UIImage(named: "hamburger"), style: UIBarButtonItemStyle.Plain, target: self, action: "menuButtonTapped:")
+        let composeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: nil)
+        let searchBar = UISearchBar()
+        searchBar.sizeToFit()
+        navigationItem.titleView = searchBar
+        navigationItem.leftBarButtonItem = menuButton
+        navigationItem.rightBarButtonItem = composeButton
+        navigationBar.items = [navigationItem]
+        mainView.view.addSubview(navigationBar)
+        
+        controller = DualSlideMenuViewController(mainViewController: mainView, leftMenuViewController: leftView!, rightMenuViewController: rightView!)
+        controller!.sideViewOffset = 200
         window!.rootViewController = controller
         window!.makeKeyAndVisible()
         return true
+    }
+    
+    func menuButtonTapped(sender: UIBarButtonItem){
+        controller?.toggle("right")
     }
 
     func applicationWillResignActive(application: UIApplication) {

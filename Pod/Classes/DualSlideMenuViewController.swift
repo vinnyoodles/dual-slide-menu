@@ -13,7 +13,6 @@ public enum State {
     case Right
     case Main
 }
-
 public class DualSlideMenuViewController: UIViewController {
     
     //Create variables that will be used 
@@ -74,7 +73,7 @@ public class DualSlideMenuViewController: UIViewController {
      - parameter swipeDirection: the direction of the swipe
         ex. "left" or "right" where swiping from left to right is a "right" swipe
      */
-    func toggle(swipeDirection: String) {
+    public func toggle(swipeDirection: String) {
         switch currentState{
         case .Main :
             //Swipe left to open right panel

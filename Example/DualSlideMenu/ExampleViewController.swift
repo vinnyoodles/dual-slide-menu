@@ -9,8 +9,9 @@
 import UIKit
 import DualSlideMenu
 
-class ExampleViewController: DualSlideMenuViewController {
-
+class ExampleViewController: UIViewController {
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
