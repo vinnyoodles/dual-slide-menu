@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 20, mainView.view.frame.size.width, 44))
         let navigationItem = UINavigationItem()
         let menuButton = UIBarButtonItem(image: UIImage(named: "hamburger"), style: UIBarButtonItemStyle.Plain, target: self, action: "menuButtonTapped:")
-        let composeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: nil)
+        let composeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "composeButtonTapped:")
         let searchBar = UISearchBar()
         searchBar.sizeToFit()
         navigationItem.titleView = searchBar
@@ -46,6 +46,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func menuButtonTapped(sender: UIBarButtonItem){
         controller?.toggle("right")
+    }
+    func composeButtonTapped(sender: UIBarButtonItem){
+        controller?.toggle("left")
     }
 
     func applicationWillResignActive(application: UIApplication) {
