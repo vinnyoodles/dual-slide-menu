@@ -91,14 +91,25 @@ public class DualSlideMenuViewController: UIViewController {
             //Swipe left to close left panel
             if (swipeDirection == "left") {
                 moveToView(false, type: .Left)
+            } else {
+                collapseAll()
             }
             break
         case .Right :
             //Swipe right to close right panel
             if (swipeDirection == "right") {
                 moveToView(false, type: .Right)
+            } else {
+                collapseAll()
             }
             break
+        }
+    }
+    func collapseAll() {
+        if currentState == .Left {
+            moveToView(false, type: .Left)
+        } else if currentState == .Right {
+            moveToView(false, type: .Right)
         }
     }
     /**
