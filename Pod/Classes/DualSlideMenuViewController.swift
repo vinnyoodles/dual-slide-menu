@@ -105,7 +105,17 @@ public class DualSlideMenuViewController: UIViewController {
             break
         }
     }
-    func collapseAll() {
+    
+    public func toMain(completion: ((Bool) -> Void)! = nil) {
+        UIView.animateWithDuration(0, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .CurveEaseInOut, animations: {
+            self.mainView.view.frame.origin.x = 0
+            }, completion: completion)
+    }
+    
+    /**
+     Will move to main view from either left or right menu
+     */
+    public func collapseAll() {
         if currentState == .Left {
             moveToView(false, type: .Left)
         } else if currentState == .Right {

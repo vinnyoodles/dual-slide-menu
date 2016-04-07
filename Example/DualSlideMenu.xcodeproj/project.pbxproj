@@ -13,6 +13,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		BFA1C2891CA619B000A05DEC /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA1C2881CA619B000A05DEC /* ExampleViewController.swift */; };
+		BFEE8DA71CB6E41700493C3D /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEE8DA61CB6E41700493C3D /* LeftViewController.swift */; };
 		D3BDC48905E5AD90ED4D357B /* Pods_DualSlideMenu_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FEEECD502C08ED6D756CD8 /* Pods_DualSlideMenu_Tests.framework */; };
 		F04DF44AB55CDFEA731FB107 /* Pods_DualSlideMenu_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F0D0267E07B47994227786 /* Pods_DualSlideMenu_Example.framework */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		98E7ECE1BF5272E88FB3B8BE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		A7DDF8243C3DA34F5CEF212F /* DualSlideMenu.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = DualSlideMenu.podspec; path = ../DualSlideMenu.podspec; sourceTree = "<group>"; };
 		BFA1C2881CA619B000A05DEC /* ExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		BFEE8DA61CB6E41700493C3D /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		E8A906A76A69BC0D435163D5 /* Pods-DualSlideMenu_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DualSlideMenu_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DualSlideMenu_Tests/Pods-DualSlideMenu_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F1F0D0267E07B47994227786 /* Pods_DualSlideMenu_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DualSlideMenu_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF420881DBEE71EC9AC8505 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				BFA1C2881CA619B000A05DEC /* ExampleViewController.swift */,
+				BFEE8DA61CB6E41700493C3D /* LeftViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -360,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFEE8DA71CB6E41700493C3D /* LeftViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				BFA1C2891CA619B000A05DEC /* ExampleViewController.swift in Sources */,
 			);

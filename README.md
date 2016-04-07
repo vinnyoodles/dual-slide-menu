@@ -70,6 +70,12 @@ controller.toggle('right')
 //This will open the left side view and move the main view to the RIGHT (KEYWORD)
 ```
 
+If you needed to return to the main view but don't want the animation just call
+```swift
+controller.toMain()
+//This will animate to the main view with showing any actual animations
+```
+
 
 ## Author
 

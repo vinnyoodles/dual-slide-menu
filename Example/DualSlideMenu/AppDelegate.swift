@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         
-        let leftView = storyboard?.instantiateViewControllerWithIdentifier("LeftMenuController")
+        let leftView = storyboard?.instantiateViewControllerWithIdentifier("LeftMenuController") as! LeftViewController
         let rightView = storyboard?.instantiateViewControllerWithIdentifier("RightMenuController")
         let mainView = storyboard?.instantiateViewControllerWithIdentifier("MainController") as! ExampleViewController
         
@@ -37,8 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBar.items = [navigationItem]
         mainView.view.addSubview(navigationBar)
         
-        controller = DualSlideMenuViewController(mainViewController: mainView, leftMenuViewController: leftView!, rightMenuViewController: rightView!)
-        controller!.sideViewOffset = 200
+        controller = DualSlideMenuViewController(mainViewController: mainView, leftMenuViewController: leftView, rightMenuViewController: rightView!)
+        controller!.sideViewOffset = 50
+        leftView.controller = controller
         window!.rootViewController = controller
         window!.makeKeyAndVisible()
         return true

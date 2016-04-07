@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Left View Controller-->
         <scene sceneID="3eu-HX-lnP">
             <objects>
-                <viewController storyboardIdentifier="LeftMenuController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="F2q-PF-okG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LeftMenuController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="F2q-PF-okG" customClass="LeftViewController" customModule="DualSlideMenu_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xH6-cc-cZ2"/>
                         <viewControllerLayoutGuide type="bottom" id="Sc5-Ah-OM1"/>
@@ -19,9 +19,29 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gG-FY-KgZ">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQt-na-81u">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="114" y="132" width="46" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="buttonClicked:" destination="F2q-PF-okG" eventType="touchUpInside" id="ysm-cQ-tw4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.1137254902" green="0.79215686269999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="AQt-na-81u"/>
+                                    </mask>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
+                                    <mask key="subviews">
+                                        <include reference="AQt-na-81u"/>
+                                    </mask>
                                 </variation>
                             </view>
                         </subviews>
@@ -37,6 +57,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="AQt-na-81u" id="Ths-B2-mdv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ns7-8Z-45u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
