@@ -100,9 +100,7 @@ controller.addSwipeGestureInSide(leftView!, direction: .Left)
 ```
 
 ###Walkthrough of new swipe gesture recognizers
-<img src='images/demo2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-
+<img src='images/demo3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 ## Author
