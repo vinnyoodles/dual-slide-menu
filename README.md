@@ -15,6 +15,7 @@ Left and right slide menu to keep your main view clutter free
 * Easy for customization
 * Your app can look like Slack's, Facebook's and many of Google's apps
 
+##Walkthrough
 
 <img src='images/demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
