@@ -38,7 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         mainView.view.addSubview(navigationBar)
         
         controller = DualSlideMenuViewController(mainViewController: mainView, leftMenuViewController: leftView, rightMenuViewController: rightView!)
-        controller!.sideViewOffset = 50
+        controller!.leftSideOffset = 100
+        controller!.rightSideOffset = 20
+        controller!.addSwipeGestureInSide(rightView!, direction: .Right)
+        controller!.addSwipeGestureInSide(leftView, direction: .Left)
         leftView.controller = controller
         window!.rootViewController = controller
         window!.makeKeyAndVisible()

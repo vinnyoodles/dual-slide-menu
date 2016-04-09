@@ -58,9 +58,11 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 ```
 
 The width of display for the side menus can be changed by adding this line of code to your AppDelegate inside of the didFinishLaunchWithOptions method
+The offset must be added for both left and right side menu
 
 ```swift
-controller.sideViewOffset = 200
+controller.leftSideOffset = 200
+controller.rightSideOffset = 200
 //200 represents the width of the main view when the side menu is present
 ```
 
@@ -74,6 +76,12 @@ If you needed to return to the main view but don't want the animation just call
 ```swift
 controller.toMain()
 //This will animate to the main view with showing any actual animations
+```
+
+If you wanted to add swipe gestures in the side menus, you can now do so
+```swift
+controller.addSwipeGestureInSide(rightView!, direction: .Right)
+controller.addSwipeGestureInSide(leftView!, direction: .Left)
 ```
 
 
