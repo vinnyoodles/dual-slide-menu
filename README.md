@@ -7,6 +7,15 @@
 
 Left and right slide menu to keep your main view clutter free
 
+##Why use this
+
+* Declutters your main view by add more real estate to your app
+* Adds simple animations to improve UX
+* Lots of documentation for methods and function to improve usability
+* Easy for customization
+* Your app can look like Slack's, Facebook's and many of Google's apps
+
+
 <img src='images/demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Usage
@@ -78,11 +87,18 @@ controller.toMain()
 //This will animate to the main view with showing any actual animations
 ```
 
+On the other hand, if you wanted to animate to the main view with actual animations
+```swift
+controller.collapseAll()
+```
+
 If you wanted to add swipe gestures in the side menus, you can now do so
 ```swift
 controller.addSwipeGestureInSide(rightView!, direction: .Right)
 controller.addSwipeGestureInSide(leftView!, direction: .Left)
 ```
+
+
 
 
 ## Author
