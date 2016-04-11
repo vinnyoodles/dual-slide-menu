@@ -1,5 +1,5 @@
 PODS:
-  - DualSlideMenu (1.1.0)
+  - DualSlideMenu (1.5.0)
   - Nimble (3.2.0)
   - Quick (0.9.1)
 
@@ -13,7 +13,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  DualSlideMenu: 1e02e5fd8d751408ee339b7032250be0b963f8a9
+  DualSlideMenu: 99b6bd9eccfc96e94322b6d69abaaccd560302da
   Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
   Quick: a5221fc21788b6aeda934805e68b061839bc3165
 
