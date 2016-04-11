@@ -54,8 +54,8 @@ public class DualSlideMenuViewController: UIViewController {
      */
     func addSwipeGestures(mainView: UIViewController) {
         // creates two swipe gesture recognizers for the two side menus
-        let leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(DualSlideMenuViewController.handleSwipes(_:)))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(DualSlideMenuViewController.handleSwipes(_:)))
         // assigns correct direction for the two recognizers even though the names are confusing
         leftSwipe.direction = .Left
         rightSwipe.direction = .Right
@@ -72,7 +72,7 @@ public class DualSlideMenuViewController: UIViewController {
      - parameter direction:      the direction of type UISwipeGestureRecognizierDirection
      */
     public func addSwipeGestureInSide(viewController: UIViewController, direction: UISwipeGestureRecognizerDirection) {
-        let swipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(DualSlideMenuViewController.handleSwipes(_:)))
         swipe.direction = direction
         viewController.view.addGestureRecognizer(swipe)
     }
