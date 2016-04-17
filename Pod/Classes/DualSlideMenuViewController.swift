@@ -13,6 +13,11 @@ public enum State {
     case Right
     case Main
 }
+
+@objc
+public protocol DualSlideMenuViewControllerDelegate {
+    optional func onSwipe()
+}
 public class DualSlideMenuViewController: UIViewController {
 
     //Create variables that will be used
@@ -24,6 +29,7 @@ public class DualSlideMenuViewController: UIViewController {
     public var leftMenu: UIViewController!
     public var leftSideOffset: CGFloat = 150 // this variable will determine the offset of the main view when a menu view is in view
     public var rightSideOffset: CGFloat = 150 // this variable will determine the offset when the right menu is in view
+    public var delegate: DualSlideMenuViewControllerDelegate?
 
     /**
       Main initialization method that is recommended for use
@@ -89,6 +95,7 @@ public class DualSlideMenuViewController: UIViewController {
         else if (sender.direction == .Right){
             toggle("right")
         }
+        delegate?.onSwipe!()
     }
 
     /**

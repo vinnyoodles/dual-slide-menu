@@ -27,8 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 20, mainView.view.frame.size.width, 44))
         let navigationItem = UINavigationItem()
-        let menuButton = UIBarButtonItem(image: UIImage(named: "hamburger"), style: UIBarButtonItemStyle.Plain, target: self, action: "menuButtonTapped:")
-        let composeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "composeButtonTapped:")
+        let menuButton = UIBarButtonItem(image: UIImage(named: "hamburger"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(AppDelegate.menuButtonTapped(_:)))
+        let composeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(AppDelegate.composeButtonTapped(_:)))
         let searchBar = UISearchBar()
         searchBar.sizeToFit()
         navigationItem.titleView = searchBar
@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         mainView.view.addSubview(navigationBar)
         
         controller = DualSlideMenuViewController(mainViewController: mainView, leftMenuViewController: leftView, rightMenuViewController: rightView!)
+        controller?.delegate = mainView
         controller!.leftSideOffset = 100
         controller!.rightSideOffset = 20
         controller!.addSwipeGestureInSide(rightView!, direction: .Right)

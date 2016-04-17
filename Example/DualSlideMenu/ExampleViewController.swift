@@ -9,15 +9,8 @@
 import UIKit
 import DualSlideMenu
 
-class ExampleViewController: UIViewController {
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+class ExampleViewController: UIViewController, DualSlideMenuViewControllerDelegate {
+    func onSwipe() {
+        print("did swipe")
     }
-    
- 
-
-
 }

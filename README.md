@@ -99,6 +99,16 @@ controller.addSwipeGestureInSide(rightView!, direction: .Right)
 controller.addSwipeGestureInSide(leftView!, direction: .Left)
 ```
 
+If you need an action performed when a swipe has occured, implement the delegate method `onSwipe`
+
+```swift
+class ExampleViewController: UIViewController, DualSlideMenuViewControllerDelegate {
+  func onSwipe() {
+    print("did swipe")
+  }
+}
+```
+
 ###Walkthrough of new swipe gesture recognizers
 <img src='images/demo3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
