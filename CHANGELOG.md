@@ -1,7 +1,8 @@
-1.6.0 Release notes (04/17/16)
+1.7.0 Release notes (04/17/16)
 =============================================================
 
 ### Updates
+Update currentState
 Add delegate for onSwipe method
 
 1.5.0 Release notes (04/10/16)
