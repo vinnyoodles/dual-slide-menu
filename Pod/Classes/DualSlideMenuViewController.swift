@@ -112,17 +112,20 @@ public class DualSlideMenuViewController: UIViewController {
             if (swipeDirection == "left") {
                 moveToView(true, type: .Right)
                 swapPanels(.Right)
+                currentState = .Right
             }
             //Swipe right to open left panel
             else if (swipeDirection == "right") {
                 moveToView(true, type: .Left)
                 swapPanels(.Left)
+                currentState = .Left
             }
             break
         case .Left :
             //Swipe left to close left panel
             if (swipeDirection == "left") {
                 moveToView(false, type: .Left)
+                currentState = .Main
             } else {
                 collapseAll()
             }
@@ -131,6 +134,7 @@ public class DualSlideMenuViewController: UIViewController {
             //Swipe right to close right panel
             if (swipeDirection == "right") {
                 moveToView(false, type: .Right)
+                currentState = .Main
             } else {
                 collapseAll()
             }
@@ -153,8 +157,9 @@ public class DualSlideMenuViewController: UIViewController {
         UIView.animateWithDuration(0, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .CurveEaseInOut, animations: {
             self.mainView.view.frame.origin.x = 0
             }, completion: completion)
+        currentState = .Main
     }
-
+    
     /**
      Will move to main view from either left or right menu.
      Pretty straight forward, this is a cleaner implementation of toMain and does include animations
@@ -167,6 +172,7 @@ public class DualSlideMenuViewController: UIViewController {
         } else if currentState == .Right {
             moveToView(false, type: .Right)
         }
+        currentState = .Main
     }
     /**
      Swap side panels positions
@@ -193,7 +199,7 @@ public class DualSlideMenuViewController: UIViewController {
      */
     func moveToView(open: Bool, type: State){
         if (open) {
-            currentState = type
+//            currentState = type
             var displacement: CGFloat = 0
             //Calculate the amount of distance the main view needs to move
             if (type == .Left) {
