@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         let leftView = storyboard?.instantiateViewControllerWithIdentifier("LeftMenuController") as! LeftViewController
-        let rightView = storyboard?.instantiateViewControllerWithIdentifier("RightMenuController")
+//        let rightView = storyboard?.instantiateViewControllerWithIdentifier("RightMenuController")
         let mainView = storyboard?.instantiateViewControllerWithIdentifier("MainController") as! ExampleViewController
         
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 20, mainView.view.frame.size.width, 44))
@@ -37,11 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBar.items = [navigationItem]
         mainView.view.addSubview(navigationBar)
         
-        controller = DualSlideMenuViewController(mainViewController: mainView, leftMenuViewController: leftView, rightMenuViewController: rightView!)
+//        controller = DualSlideMenuViewController(mainViewController: mainView, leftMenuViewController: leftView, rightMenuViewController: rightView!)
+        controller = DualSlideMenuViewController(mainViewController: mainView, leftMenuViewController: leftView)
         controller?.delegate = mainView
         controller!.leftSideOffset = 100
-        controller!.rightSideOffset = 20
-        controller!.addSwipeGestureInSide(rightView!, direction: .Right)
+//        controller!.rightSideOffset = 20
+//        controller!.addSwipeGestureInSide(rightView!, direction: .Right)
         controller!.addSwipeGestureInSide(leftView, direction: .Left)
         leftView.controller = controller
         window!.rootViewController = controller

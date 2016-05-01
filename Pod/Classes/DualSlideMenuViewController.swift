@@ -30,6 +30,34 @@ public class DualSlideMenuViewController: UIViewController {
     public var leftSideOffset: CGFloat = 150 // this variable will determine the offset of the main view when a menu view is in view
     public var rightSideOffset: CGFloat = 150 // this variable will determine the offset when the right menu is in view
     public var delegate: DualSlideMenuViewControllerDelegate?
+    
+    private var amountOfMenus: Int!
+    private var menuType: State!
+    
+    public convenience init(mainViewController: UIViewController, leftMenuViewController: UIViewController) {
+        self.init()
+        mainView = mainViewController
+        leftMenu = leftMenuViewController
+
+        addSwipeGestures(mainView)
+        view.insertSubview(mainView.view, atIndex: 0) // adds main view at the bottom
+        view.insertSubview(leftMenu.view, belowSubview: mainView.view)
+        amountOfMenus = 1;
+        menuType = .Left
+        
+    }
+    
+    public convenience init (mainViewController: UIViewController, rightMenuViewController: UIViewController) {
+        self.init()
+        mainView = mainViewController
+        rightMenu = rightMenuViewController
+
+        addSwipeGestures(mainView)
+        view.insertSubview(mainView.view, atIndex: 0) // adds main view at the bottom
+        view.insertSubview(rightMenu.view, belowSubview: mainView.view)
+        amountOfMenus = 1;
+        menuType = .Right
+    }
 
     /**
       Main initialization method that is recommended for use
@@ -50,7 +78,9 @@ public class DualSlideMenuViewController: UIViewController {
         view.insertSubview(mainView.view, atIndex: 0) // adds main view at the bottom
         view.insertSubview(rightMenu.view, belowSubview: mainView.view) // stacks subview in order
         view.insertSubview(leftMenu.view, belowSubview: rightMenu.view) // the two subviews are added in this order, but makes no real noticeable difference
+        amountOfMenus = 2;
     }
+    
     /**
      Method called on initialization that adds left and right swipe recognizers
 
@@ -109,18 +139,20 @@ public class DualSlideMenuViewController: UIViewController {
         switch currentState{
         case .Main :
             //Swipe left to open right panel
+            print(menuType)
             if (swipeDirection == "left") {
-                moveToView(true, type: .Right)
-                swapPanels(.Right)
+                if menuType == .Right || amountOfMenus == 2 { moveToView(true, type: .Right) }
+                if amountOfMenus == 2 { swapPanels(.Right) }
             }
             //Swipe right to open left panel
             else if (swipeDirection == "right") {
-                moveToView(true, type: .Left)
-                swapPanels(.Left)
+                if menuType == .Left || amountOfMenus == 2 { moveToView(true, type: .Left) }
+                if amountOfMenus == 2 { swapPanels(.Left) }
             }
             break
         case .Left :
             //Swipe left to close left panel
+            print(swipeDirection)
             if (swipeDirection == "left") {
                 moveToView(false, type: .Left)
             } else {
