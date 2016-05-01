@@ -58,11 +58,21 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
     let rightView = storyboard?.instantiateViewControllerWithIdentifier("RightMenuController")
     let mainView = storyboard?.instantiateViewControllerWithIdentifier("MainController")
 
-    let controller = ExampleViewController(mainViewController: mainView!, leftMenuViewController: leftView!, rightMenuViewController: rightView!)
+    let controller = DualSlideMenuViewController(mainViewController: mainView!, leftMenuViewController: leftView!, rightMenuViewController: rightView!)
     window!.rootViewController = controller
     window!.makeKeyAndVisible()
     return true
 }
+
+```
+
+If you only want to use a certain side for a menu then initalize using the following method 
+
+```swift
+    let leftView = storyboard?.instantiateViewControllerWithIdentifier("LeftMenuController")
+    let mainView = storyboard?.instantiateViewControllerWithIdentifier("MainController")
+
+    let controller = DualSlideMenuViewController(mainViewController: mainView!, leftMenuViewController: leftView!)
 
 ```
 
