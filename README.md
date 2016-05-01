@@ -66,7 +66,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 
 ```
 
-If you only want to use a certain side for a menu then initalize using the following method 
+If you only want to use a certain side for a menu then initialize using the following method 
 
 ```swift
     let leftView = storyboard?.instantiateViewControllerWithIdentifier("LeftMenuController")
