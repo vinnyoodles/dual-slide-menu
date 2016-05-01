@@ -1,3 +1,9 @@
+1.7.1 Release notes (05/1/16)
+=============================================================
+
+###Updates
+Add initialization methods for a left or a right menu
+
 1.6.0 Release notes (04/17/16)
 =============================================================
 
