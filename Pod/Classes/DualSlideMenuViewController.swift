@@ -32,7 +32,7 @@ public class DualSlideMenuViewController: UIViewController {
     public var delegate: DualSlideMenuViewControllerDelegate?
     
     private var amountOfMenus: Int!
-    private var menuType: State!
+    private var menuType: State?
     
     public convenience init(mainViewController: UIViewController, leftMenuViewController: UIViewController) {
         self.init()
