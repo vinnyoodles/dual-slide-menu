@@ -11,7 +11,7 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		BF0F33C31CE6939800ACB8A7 /* DualSlideMenu_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0F33C21CE6939800ACB8A7 /* DualSlideMenu_ExampleUITests.swift */; };
 		BFA1C2891CA619B000A05DEC /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA1C2881CA619B000A05DEC /* ExampleViewController.swift */; };
 		BFEE8DA71CB6E41700493C3D /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEE8DA61CB6E41700493C3D /* LeftViewController.swift */; };
 		D3BDC48905E5AD90ED4D357B /* Pods_DualSlideMenu_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FEEECD502C08ED6D756CD8 /* Pods_DualSlideMenu_Tests.framework */; };
@@ -25,6 +25,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
 			remoteInfo = DualSlideMenu;
+		};
+		BF0F33C51CE6939800ACB8A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = DualSlideMenu_Example;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -40,10 +47,12 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* DualSlideMenu_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DualSlideMenu_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		682EC431A6C31AE4CF1D7CA0 /* Pods-DualSlideMenu_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DualSlideMenu_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DualSlideMenu_Example/Pods-DualSlideMenu_Example.release.xcconfig"; sourceTree = "<group>"; };
 		98E7ECE1BF5272E88FB3B8BE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		A7DDF8243C3DA34F5CEF212F /* DualSlideMenu.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = DualSlideMenu.podspec; path = ../DualSlideMenu.podspec; sourceTree = "<group>"; };
+		BF0F33C01CE6939800ACB8A7 /* DualSlideMenu_ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DualSlideMenu_ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF0F33C21CE6939800ACB8A7 /* DualSlideMenu_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DualSlideMenu_ExampleUITests.swift; sourceTree = "<group>"; };
+		BF0F33C41CE6939800ACB8A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFA1C2881CA619B000A05DEC /* ExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		BFEE8DA61CB6E41700493C3D /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		E8A906A76A69BC0D435163D5 /* Pods-DualSlideMenu_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DualSlideMenu_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DualSlideMenu_Tests/Pods-DualSlideMenu_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +74,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3BDC48905E5AD90ED4D357B /* Pods_DualSlideMenu_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF0F33BD1CE6939800ACB8A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +113,7 @@
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for DualSlideMenu */,
 				607FACE81AFB9204008FA782 /* Tests */,
+				BF0F33C11CE6939800ACB8A7 /* DualSlideMenu_ExampleUITests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				0E99A3D41CA1E7E2D5B7B2BE /* Pods */,
 				2E4C45755A1AAD9B983ADD9B /* Frameworks */,
@@ -108,6 +125,7 @@
 			children = (
 				607FACD01AFB9204008FA782 /* DualSlideMenu_Example.app */,
 				607FACE51AFB9204008FA782 /* DualSlideMenu_Tests.xctest */,
+				BF0F33C01CE6939800ACB8A7 /* DualSlideMenu_ExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,7 +156,6 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -160,6 +177,15 @@
 				98E7ECE1BF5272E88FB3B8BE /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		BF0F33C11CE6939800ACB8A7 /* DualSlideMenu_ExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BF0F33C21CE6939800ACB8A7 /* DualSlideMenu_ExampleUITests.swift */,
+				BF0F33C41CE6939800ACB8A7 /* Info.plist */,
+			);
+			path = DualSlideMenu_ExampleUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,13 +232,31 @@
 			productReference = 607FACE51AFB9204008FA782 /* DualSlideMenu_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		BF0F33BF1CE6939800ACB8A7 /* DualSlideMenu_ExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF0F33C71CE6939800ACB8A7 /* Build configuration list for PBXNativeTarget "DualSlideMenu_ExampleUITests" */;
+			buildPhases = (
+				BF0F33BC1CE6939800ACB8A7 /* Sources */,
+				BF0F33BD1CE6939800ACB8A7 /* Frameworks */,
+				BF0F33BE1CE6939800ACB8A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF0F33C61CE6939800ACB8A7 /* PBXTargetDependency */,
+			);
+			name = DualSlideMenu_ExampleUITests;
+			productName = DualSlideMenu_ExampleUITests;
+			productReference = BF0F33C01CE6939800ACB8A7 /* DualSlideMenu_ExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
@@ -222,6 +266,11 @@
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+					BF0F33BF1CE6939800ACB8A7 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = HHC2R7Q8M6;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -241,6 +290,7 @@
 			targets = (
 				607FACCF1AFB9204008FA782 /* DualSlideMenu_Example */,
 				607FACE41AFB9204008FA782 /* DualSlideMenu_Tests */,
+				BF0F33BF1CE6939800ACB8A7 /* DualSlideMenu_ExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -257,6 +307,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		607FACE31AFB9204008FA782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF0F33BE1CE6939800ACB8A7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -373,7 +430,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF0F33BC1CE6939800ACB8A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF0F33C31CE6939800ACB8A7 /* DualSlideMenu_ExampleUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +448,11 @@
 			isa = PBXTargetDependency;
 			target = 607FACCF1AFB9204008FA782 /* DualSlideMenu_Example */;
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
+		};
+		BF0F33C61CE6939800ACB8A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* DualSlideMenu_Example */;
+			targetProxy = BF0F33C51CE6939800ACB8A7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -559,6 +628,33 @@
 			};
 			name = Release;
 		};
+		BF0F33C81CE6939800ACB8A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = DualSlideMenu_ExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "vinnyoodles.DualSlideMenu-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DualSlideMenu_Example;
+			};
+			name = Debug;
+		};
+		BF0F33C91CE6939800ACB8A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = DualSlideMenu_ExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "vinnyoodles.DualSlideMenu-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DualSlideMenu_Example;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -588,6 +684,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		BF0F33C71CE6939800ACB8A7 /* Build configuration list for PBXNativeTarget "DualSlideMenu_ExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF0F33C81CE6939800ACB8A7 /* Debug */,
+				BF0F33C91CE6939800ACB8A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
