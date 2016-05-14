@@ -12,35 +12,101 @@ import DualSlideMenu
 class DualSlideMenu_ExampleUITests: XCTestCase {
     
     var controller: DualSlideMenuViewController!
-    var left: UIViewController!
-    var right: UIViewController!
-    var main: UIViewController!
+    var expect: XCTestExpectation?
     
     override func setUp() {
         super.setUp()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        left = storyboard.instantiateViewControllerWithIdentifier("LeftMenuController")
-        right = storyboard.instantiateViewControllerWithIdentifier("RightMenuController")
-        main = storyboard.instantiateViewControllerWithIdentifier("MainController")
-        controller = DualSlideMenuViewController(mainViewController: main, leftMenuViewController: left, rightMenuViewController: right)
         
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-        
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        controller = DualSlideMenuViewController(mainViewController: UIViewController(), leftMenuViewController: UIViewController(), rightMenuViewController: UIViewController())
+        controller.delegate = self
     }
-
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testLeftMenuSwipe() {
+        dispatchAsyncExpectation("right", type: State.Left, instance: controller)
     }
     
+    func testRightMenuSwipe() {
+        dispatchAsyncExpectation("left", type: State.Right, instance: controller)
+    }
+    
+    func testSwipeHome() {
+        controller.toLeft()
+        dispatchAsyncExpectation("left", type: State.Main, instance: controller)
+        
+        controller.toRight()
+        dispatchAsyncExpectation("right", type: State.Main, instance: controller)
+    }
+    
+    func testInstantSlide() {
+        controller.toLeft()
+        XCTAssertEqual(State.Left, controller.currentState)
+        controller.toMain()
+        XCTAssertEqual(State.Main, controller.currentState)
+        controller.toRight()
+        XCTAssertEqual(State.Right, controller.currentState)
+        controller.toLeft()
+        XCTAssertEqual(State.Left, controller.currentState)
+    }
+    
+    func testCollapseAll() {
+        controller.toLeft()
+        dispatchAsyncExpectation("right", type: State.Main, instance: controller)
+        
+        controller.toRight()
+        dispatchAsyncExpectation("left", type: State.Main, instance: controller)
+    }
+    
+    func testJustLeftMenu() {
+        let leftOnly = DualSlideMenuViewController(mainViewController: UIViewController(), leftMenuViewController: UIViewController())
+        leftOnly.delegate = self
+        dispatchAsyncExpectation("right", type: State.Left, instance: leftOnly)
+        
+        dispatchAsyncExpectation("left", type: State.Main, instance: leftOnly)
+        
+        leftOnly.toggle("left")
+        XCTAssertEqual(State.Main, leftOnly.currentState)
+        
+        leftOnly.toRight()
+        XCTAssertEqual(State.Main, leftOnly.currentState)
+    }
+    
+    func testJustRightMenu() {
+        let rightOnly = DualSlideMenuViewController(mainViewController: UIViewController(), rightMenuViewController: UIViewController())
+       rightOnly.delegate = self
+        dispatchAsyncExpectation("left", type: State.Right, instance: rightOnly)
+        
+        dispatchAsyncExpectation("right", type: State.Main, instance: rightOnly)
+        
+        rightOnly.toggle("right")
+        XCTAssertEqual(State.Main, rightOnly.currentState)
+        
+        rightOnly.toLeft()
+        XCTAssertEqual(State.Main, rightOnly.currentState)
+        
+    }
+    
+    
+    private func dispatchAsyncExpectation(direction: String, type: State, instance: DualSlideMenuViewController) {
+        expect = expectationWithDescription("Waiting for asynchronous animation to finish")
+        instance.toggle(direction)
+        waitForExpectationsWithTimeout(1) { _ in
+            print("comparing \(type) to \(instance.currentState)")
+            XCTAssertEqual(type, instance.currentState)
+        }
+        
+    }
+}
+
+extension DualSlideMenu_ExampleUITests: DualSlideMenuViewControllerDelegate {
+    
+    func didChangeView() {
+        expect?.fulfill()
+        print("expectation has been fulfilled")
+    }
 }
