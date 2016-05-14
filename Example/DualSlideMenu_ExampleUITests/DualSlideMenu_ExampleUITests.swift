@@ -96,7 +96,6 @@ class DualSlideMenu_ExampleUITests: XCTestCase {
         expect = expectationWithDescription("Waiting for asynchronous animation to finish")
         instance.toggle(direction)
         waitForExpectationsWithTimeout(1) { _ in
-            print("comparing \(type) to \(instance.currentState)")
             XCTAssertEqual(type, instance.currentState)
         }
         
@@ -107,6 +106,5 @@ extension DualSlideMenu_ExampleUITests: DualSlideMenuViewControllerDelegate {
     
     func didChangeView() {
         expect?.fulfill()
-        print("expectation has been fulfilled")
     }
 }

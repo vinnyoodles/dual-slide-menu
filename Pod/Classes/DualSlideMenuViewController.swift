@@ -153,7 +153,6 @@ public class DualSlideMenuViewController: UIViewController {
         case .Left :
             //Swipe left to close left panel
             if (swipeDirection == "left") {
-                print("closing menu")
                 moveToView(false, type: .Left)
             } else {
                 collapseAll()
@@ -250,7 +249,6 @@ public class DualSlideMenuViewController: UIViewController {
      */
     private func moveToView(open: Bool, type: State){
         if (open) {
-            print("\n\nMOVING TO SIDE MENU \(type)")
             var displacement: CGFloat = 0
             //Calculate the amount of distance the main view needs to move
             if (type == .Left) {
@@ -260,7 +258,6 @@ public class DualSlideMenuViewController: UIViewController {
                 displacement = rightSideOffset - CGRectGetWidth(mainView.view.frame)
             }
             moveMainViewBy(displacement) { _ in
-                print("state has changed from \(self.currentState) to \(type)")
                 self.currentState = type
                 self.delegate?.didChangeView!()
             }
