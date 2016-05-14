@@ -1,3 +1,9 @@
+1.7.3 Release notes (05/13/16)
+=============================================================
+
+###Updates
+Add unit testing and a left/right navigation without animation function
+
 1.7.1 Release notes (05/1/16)
 =============================================================
 
