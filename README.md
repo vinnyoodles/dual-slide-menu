@@ -1,4 +1,4 @@
-DualSlideMenu
+#DualSlideMenu
 ================
 [![Version](https://img.shields.io/cocoapods/v/DualSlideMenu.svg?style=flat)](http://cocoapods.org/pods/DualSlideMenu)
 [![License](https://img.shields.io/cocoapods/l/DualSlideMenu.svg?style=flat)](http://cocoapods.org/pods/DualSlideMenu)
@@ -9,9 +9,9 @@ Left and right slide menu to keep your main view clutter free
 ##Table of Contents
 - [Why use this](#why-use-this) 
 - [Demo](#demo) 
-- [Walkthrough](#walkthrough)
+- [Tutorial](#tutorial)
   - [Requirements](#requirements)
-  - [Installation](#installation)
+  - [Installation and Walkthrough](#installation)
 - [Delegate Methods](#delegate-methods) 
 - [Complete API](#complete-api) 
 - [Contributions](#contributions) 
@@ -30,7 +30,7 @@ Left and right slide menu to keep your main view clutter free
 
 <img src='images/demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-##Walkthrough
+##Tutorial
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first. Then, run the example project and check out the example.
 
@@ -133,7 +133,7 @@ func didChangeView() {
 ```
 
 ###Complete API 
-[[Back to Top](DualSlideMenu)]
+[[Back to Top](#dualslidemenu)]
 
 ```swift
   // Initializers
@@ -188,20 +188,20 @@ func didChangeView() {
 
 
 ##Walkthrough of new swipe gesture recognizers
-[[Back to Top](DualSlideMenu)]
+[[Back to Top](#dualslidemenu)]
 <br>
   <img src='images/demo3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Contributions
-[[Back to Top](DualSlideMenu)]
+[[Back to Top](#dualslidemenu)]
   I am happy to accept any open contributions. Just fork this project, make the changes and submit a pull request.
 
 ## Author
-[[Back to Top](DualSlideMenu)]
+[[Back to Top](#dualslidemenu)]
 
   Vincent Le, vinnyoodles@gmail.com
 
 ## License
-[[Back to Top](DualSlideMenu)]
+[[Back to Top](#dualslidemenu)]
 
   DualSlideMenu is available under the MIT license. See the LICENSE file for more info.
