@@ -1,5 +1,5 @@
 #DualSlideMenu
-================
+
 [![Version](https://img.shields.io/cocoapods/v/DualSlideMenu.svg?style=flat)](http://cocoapods.org/pods/DualSlideMenu)
 [![License](https://img.shields.io/cocoapods/l/DualSlideMenu.svg?style=flat)](http://cocoapods.org/pods/DualSlideMenu)
 [![Platform](https://img.shields.io/cocoapods/p/DualSlideMenu.svg?style=flat)](http://cocoapods.org/pods/DualSlideMenu)
