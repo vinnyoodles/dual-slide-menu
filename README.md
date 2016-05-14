@@ -74,56 +74,56 @@ let mainView = storyboard?.instantiateViewControllerWithIdentifier("MainControll
 
 let controller = DualSlideMenuViewController(mainViewController: mainView!, leftMenuViewController: leftView!)
 
-  ```
+```
 
-  The width of display for the side menus can be changed by adding this line of code to your AppDelegate inside of the didFinishLaunchWithOptions method
-  The offset must be added for both left and right side menu
+The width of display for the side menus can be changed by adding this line of code to your AppDelegate inside of the didFinishLaunchWithOptions method
+The offset must be added for both left and right side menu
 
-  ```swift
-  controller.leftSideOffset = 200
-  controller.rightSideOffset = 200
-  //200 represents the width of the main view when the side menu is present
-  ```
+```swift
+controller.leftSideOffset = 200
+controller.rightSideOffset = 200
+//200 represents the width of the main view when the side menu is present
+```
 
-  If you decide to add other actions to open the menu such as a hamburger button, then just call the toggle method of DualSlideMenuViewController with the parameter of which direction the main view should move. I know its counterintuitive, but think of the parameter not as where the side view appears but where the main view is moving towards
-  ```swift
-  controller.toggle('right')
-  //This will open the left side view and move the main view to the RIGHT (KEYWORD)
-  ```
+If you decide to add other actions to open the menu such as a hamburger button, then just call the toggle method of DualSlideMenuViewController with the parameter of which direction the main view should move. I know its counterintuitive, but think of the parameter not as where the side view appears but where the main view is moving towards
+```swift
+controller.toggle('right')
+//This will open the left side view and move the main view to the RIGHT (KEYWORD)
+```
 
 ###Switching views without animation
-  ```swift
-  controller.toMain() // main view appears without animation
-  controller.toLeft() // left view appears without animation
+```swift
+controller.toMain() // main view appears without animation
+controller.toLeft() // left view appears without animation
 controller.toRight() // right view appears without animation
-  ```
+```
 
-  On the other hand, if you wanted to animate to the main view with actual animations
-  ```swift
+On the other hand, if you wanted to animate to the main view with actual animations
+```swift
 controller.collapseAll()
-  ```
+```
 
-  If you wanted to add swipe gestures in the side menus, you can now do so
-  ```swift
-  controller.addSwipeGestureInSide(rightView!, direction: .Right)
+If you wanted to add swipe gestures in the side menus, you can now do so
+```swift
+controller.addSwipeGestureInSide(rightView!, direction: .Right)
 controller.addSwipeGestureInSide(leftView!, direction: .Left)
-  ```
+```
 
 ###Delegate Methods
 
-  ```swift
-  func onSwipe() {
-    // Called when the user has swiped from any view
-  }
+```swift
+func onSwipe() {
+  // Called when the user has swiped from any view
+}
 
 func didChangeView() {
   // Called when asynchronous animation has completed
-}
 }
 ```
 
 ###Complete API
 ```swift
+  // Initializers
   public convenience init(mainViewController: UIViewController, leftMenuViewController: UIViewController)
   public convenience init (mainViewController: UIViewController, rightMenuViewController: UIViewController)
   public convenience init(mainViewController: UIViewController, leftMenuViewController: UIViewController, rightMenuViewController: UIViewController) 
