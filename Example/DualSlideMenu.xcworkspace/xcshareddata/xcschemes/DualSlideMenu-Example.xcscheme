@@ -47,16 +47,6 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "DualSlideMenu_Tests.xctest"
-               BlueprintName = "DualSlideMenu_Tests"
-               ReferencedContainer = "container:DualSlideMenu.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "BF0F33BF1CE6939800ACB8A7"
                BuildableName = "DualSlideMenu_ExampleUITests.xctest"
                BlueprintName = "DualSlideMenu_ExampleUITests"

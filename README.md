@@ -3,6 +3,8 @@
 [![Version](https://img.shields.io/cocoapods/v/DualSlideMenu.svg?style=flat)](http://cocoapods.org/pods/DualSlideMenu)
 [![License](https://img.shields.io/cocoapods/l/DualSlideMenu.svg?style=flat)](http://cocoapods.org/pods/DualSlideMenu)
 [![Platform](https://img.shields.io/cocoapods/p/DualSlideMenu.svg?style=flat)](http://cocoapods.org/pods/DualSlideMenu)
+[![Build Status](https://travis-ci.org/vinnyoodles/DualSlideMenu.svg?branch=master)](https://travis-ci.org/vinnyoodles/DualSlideMenu)
+[![codecov](https://codecov.io/gh/vinnyoodles/DualSlideMenu/branch/master/graph/badge.svg)](https://codecov.io/gh/vinnyoodles/DualSlideMenu)
 
 Left and right slide menu to keep your main view clutter free
 

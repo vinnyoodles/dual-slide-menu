@@ -10,5 +10,8 @@ before_install:
 
 script:
 - set -o pipefail 
-- xcodebuild clean build -workspace Example/DualSlideMenu.xcworkspace -scheme DualSlideMenu-Example -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6" | xcpretty
+- xcodebuild clean test -workspace Example/DualSlideMenu.xcworkspace -scheme DualSlideMenu-Example -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6" -enableCodeCoverage YES | xcpretty
 - pod lib lint --allow-warnings
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
