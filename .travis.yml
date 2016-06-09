@@ -1,14 +1,14 @@
-# references:
-# * http://www.objc.io/issue-6/travis-ci.html
-# * https://github.com/supermarin/xcpretty#usage
+language: objective-c
+osx_image: xcode7.3
 
-language: swift
-rvm: 2.2.2
-# cache: cocoapods
-#podfile: Example/Podfile
+branches:
+ only:
+  - master
+
 before_install:
-- gem install cocoapods --no-rdoc --no-ri --no-document --quiet
-#- pod install --project-directory=Example
+- gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+
 script:
-- set -o pipefail #&& xcodebuild test -workspace Example/DualSlideMenu.xcworkspace -scheme DualSlideMenu-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail 
+- xcodebuild clean build -workspace Example/DualSlideMenu.xcworkspace -scheme DualSlideMenu-Example -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6" | xcpretty
 - pod lib lint --allow-warnings
