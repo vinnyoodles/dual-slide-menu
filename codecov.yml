@@ -1,0 +1,3 @@
+ status:
+  ignore: # files and folders for processing
+    - Example/*
