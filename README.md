@@ -1,4 +1,4 @@
-#DualSlideMenu
+# DualSlideMenu
 
 [![Version](https://img.shields.io/cocoapods/v/DualSlideMenu.svg?style=flat)](http://cocoapods.org/pods/DualSlideMenu)
 [![Build Status](https://travis-ci.org/vinnyoodles/DualSlideMenu.svg?branch=master)](https://travis-ci.org/vinnyoodles/DualSlideMenu)
@@ -6,7 +6,7 @@
 
 Left and right slide menu to keep your main view clutter free
 
-##Table of Contents
+## Table of Contents
 - [Why use this](#why-use-this) 
 - [Demo](#demo) 
 - [Tutorial](#tutorial)
@@ -18,7 +18,7 @@ Left and right slide menu to keep your main view clutter free
 - [Author](#author) 
 - [License](#license) 
 
-##Why use this
+## Why use this
 
 * Declutters your main view by add more real estate to your app
 * Adds simple animations to improve UX
@@ -26,11 +26,11 @@ Left and right slide menu to keep your main view clutter free
 * Easy for customization
 * Your app can look like Slack's, Facebook's and many of Google's apps
 
-##Demo
+## Demo
 
 <img src='images/demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-##Tutorial
+## Tutorial
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first. Then, run the example project and check out the example.
 
@@ -45,16 +45,16 @@ it, simply add the following line to your Podfile:
 pod "DualSlideMenu"
 ```
 
-#####Create a main view controller, which can be considered the home view of the app, and two other view controllers which will be the left and the right side menus. Then add an identifier for the three view controllers which will be used in the AppDelegate.
+##### Create a main view controller, which can be considered the home view of the app, and two other view controllers which will be the left and the right side menus. Then add an identifier for the three view controllers which will be used in the AppDelegate.
 
 ![identifier](images/identifier.png)
 
-#####In your AppDelegate file, add the pod to the file. 
+##### In your AppDelegate file, add the pod to the file. 
   ```swift
   import DualSlideMenu
   ```
 
-#####Then, initialize and add the three view controllers to the container class using the identifers from above
+##### Then, initialize and add the three view controllers to the container class using the identifers from above
 
   ```swift
   var window: UIWindow?
@@ -78,7 +78,7 @@ pod "DualSlideMenu"
 
 ```
 
-#####If you only want to use a certain side for a menu then initialize using the following method 
+##### If you only want to use a certain side for a menu then initialize using the following method 
 
 ```swift
 let leftView = storyboard?.instantiateViewControllerWithIdentifier("LeftMenuController")
@@ -88,7 +88,7 @@ let controller = DualSlideMenuViewController(mainViewController: mainView!, left
 
 ```
 
-#####The width of display for the side menus can be changed by adding this line of code to your AppDelegate inside of the didFinishLaunchWithOptions method. The offset must be added for both left and right side menu
+##### The width of display for the side menus can be changed by adding this line of code to your AppDelegate inside of the didFinishLaunchWithOptions method. The offset must be added for both left and right side menu
 
 ```swift
 controller.leftSideOffset = 200
@@ -96,31 +96,31 @@ controller.rightSideOffset = 200
 //200 represents the width of the main view when the side menu is present
 ```
 
-#####If you decide to add other actions to open the menu such as a hamburger button, then just call the toggle method of DualSlideMenuViewController with the parameter of which direction the main view should move. I know its counterintuitive, but think of the parameter not as where the side view appears but where the main view is moving towards
+##### If you decide to add other actions to open the menu such as a hamburger button, then just call the toggle method of DualSlideMenuViewController with the parameter of which direction the main view should move. I know its counterintuitive, but think of the parameter not as where the side view appears but where the main view is moving towards
 ```swift
 controller.toggle('right')
 //This will open the left side view and move the main view to the RIGHT (KEYWORD)
 ```
 
-#####Switching views without animation
+##### Switching views without animation
 ```swift
 controller.toMain() // main view appears without animation
 controller.toLeft() // left view appears without animation
 controller.toRight() // right view appears without animation
 ```
 
-#####On the other hand, if you wanted to animate to the main view with actual animations
+##### On the other hand, if you wanted to animate to the main view with actual animations
 ```swift
 controller.collapseAll()
 ```
 
-#####If you wanted to add swipe gestures in the side menus, you can now do so
+##### If you wanted to add swipe gestures in the side menus, you can now do so
 ```swift
 controller.addSwipeGestureInSide(rightView!, direction: .Right)
 controller.addSwipeGestureInSide(leftView!, direction: .Left)
 ```
 
-###Delegate Methods
+### Delegate Methods
 
 ```swift
 func onSwipe() {
@@ -132,7 +132,7 @@ func didChangeView() {
 }
 ```
 
-###Complete API 
+### Complete API 
 [[Back to Top](#dualslidemenu)]
 
 ```swift
@@ -187,7 +187,7 @@ func didChangeView() {
 
 
 
-##Walkthrough of new swipe gesture recognizers
+## Walkthrough of new swipe gesture recognizers
 [[Back to Top](#dualslidemenu)]
 <br>
   <img src='images/demo3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
